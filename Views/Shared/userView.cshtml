@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "userView";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cook Book</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="~/Content/reset.css" type="text/css" media="screen">
+<link rel="stylesheet" href="~/Content/style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="~/Content/layout.css" type="text/css" media="screen">
+<script src="~/Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="~/Scripts/cufon-yui.js" type="text/javascript"></script>
+<script src="~/Scripts/cufon-replace.js" type="text/javascript"></script>
+<script src="~/Scripts/Dynalight_400.font.js" type="text/javascript"></script>
+<script src="~/Scripts/FF-cash.js" type="text/javascript"></script>
+<script src="~/Scripts/jquery.equalheights.js" type="text/javascript"></script>
+<script src="~/Scripts/jquery.bxSlider.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+    $('#slider').bxSlider({
+        pager: true,
+        controls: false,
+        moveSlideQty: 1,
+        displaySlideQty: 3
+    });
+});
+</script>
+<!--[if lt IE 9]><script type="text/javascript" src="js/html5.js"></script><![endif]-->
+</head>
+
+
+<body>
+
+@RenderBody()
+
+<footer>
+  <div class="main">
+    <div class="aligncenter"> <span>Copyright &copy; <a href="/User/Index">Cook Book</a> All Rights Reserved</span> Do not use this content without reference to the original website </div>
+  </div>
+</footer>
+    </body>
+</html>

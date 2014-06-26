@@ -1,0 +1,373 @@
+﻿@{
+    Layout = "~/Views/Shared/adminLayout.cshtml";
+}
+
+
+<!--==============================header=================================-->
+<header>
+  <div class="row-top">
+    <div class="main">
+      <div class="wrapper">
+        <h1><a href="/Admin/adminStart">Cook Book</a></h1>
+        <nav>
+          <ul class="menu">
+            <li><a href="/Admin/adminStart">Home</a></li>
+            <li><a href="/Admin/add">Add Recipes</a></li>
+              <li><a class="active" href="/Admin/add">View</a></li>
+             <li><a href="/Admin/search">Search </a></li>
+            <li><a href="/Admin/delete">Delete </a></li>
+            <li><a href="/Admin/update">Update</a></li>
+             <li><a href="/Admin/viewSuggestions">View Suggestions</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div class="row-bot">
+    <div class="row-bot-bg">
+      <div class="main">
+        <h2>Tasty Recipes <span>for any Occasion</span></h2>
+      </div>
+    </div>
+  </div>
+</header>
+<!--==============================content================================-->
+<section id="content">
+  <div class="main">
+    <div class="wrapper">
+ 
+      <article class="col-2">
+          <br />
+           <br />
+        <h3 style="font-size:40px"><b><i><u>Category List</u></i></b></h3>
+        
+          <form>
+          <div id="Pakistan"><a href="/Admin/GetMenu/1"><h2><span>Pakistani Cuisine</span></h2></a></div>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="button" id="Pakistan1" value="search"  style="color:orangered ; font-weight: bold; font-size: large ; height:30px ; border-style:groove; border-width:thin; border-color:black; border-radius:40px" />
+              <br/>
+              <br/>
+              <table id="t">
+
+@Scripts.Render("~/bundles/jquery")
+
+<script>
+
+    $(document).ready(function () {
+        $('#Pakistan1').click(function () {
+            $.getJSON("/Admin/searchShow?sender=" + "Pakistani", function (data) {
+
+                $('#t').empty();
+
+
+                $.each(data, function (i, item) {
+
+                    $('#t').append('<tr><td><pre style="font-family:Arial">' + item.Name + '</pre></td><td><pre style="font-family:Arial" >                                '
+                    + '</pre></td><td><pre style="font-family:Arial"> <a href=/Admin/getRecipe/' + item.Id + '>Read</a> </pre>            '
+                       + ' <pre style="font-family:Arial"></pre></td></tr> ');
+
+                });
+
+            });
+
+
+
+        });
+
+
+
+    });
+
+
+</script>
+                  </table>
+              
+              <div id="indian"><a href="/Admin/GetMenu/2"><h2><span>Indian Cuisine</span></h2></a></div>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="button" id="indian1" value="search"  style="color:orangered ; font-weight: bold; font-size: large ; height:30px ; border-style:groove; border-width:thin; border-color:black; border-radius:40px" />
+           
+              <br/>
+              <br/>
+              <table id="t1">
+
+@Scripts.Render("~/bundles/jquery")
+
+<script>
+
+    $(document).ready(function () {
+        $('#indian1').click(function () {
+            $.getJSON("/Admin/searchShow?sender=" + "indian", function (data) {
+
+                $('#t1').empty();
+
+
+                $.each(data, function (i, item) {
+
+                    $('#t1').append('<tr><td><pre style="font-family:Arial">' + item.Name + '</pre></td><td><pre style="font-family:Arial" >                                '
+                    + '</pre></td><td><pre style="font-family:Arial"> <a href=/Admin/getRecipe/' + item.Id + '>Read</a> </pre>            '
+                       + ' <pre style="font-family:Arial"></pre></td></tr> ');
+
+                });
+
+            });
+
+
+
+        });
+
+
+
+    });
+
+
+</script>
+                  </table>
+              
+              <div id="Chinese"><a href="/Admin/GetMenu/3"><h2><span>Chinese Cuisine</span></h2></a></div>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="button" id="chinese1" value="search"  style="color:orangered ; font-weight: bold; font-size: large ; height:30px ; border-style:groove; border-width:thin; border-color:black; border-radius:40px" />
+            
+              <br/>
+              <br/>
+              <table id="t3">
+
+@Scripts.Render("~/bundles/jquery")
+
+<script>
+
+    $(document).ready(function () {
+        $('#chinese1').click(function () {
+            $.getJSON("/Admin/searchShow?sender=" + "chinese", function (data) {
+
+                $('#t3').empty();
+
+
+                $.each(data, function (i, item) {
+
+                    $('#t3').append('<tr><td><pre style="font-family:Arial">' + item.Name + '</pre></td><td><pre style="font-family:Arial" >                                '
+                    + '</pre></td><td><pre style="font-family:Arial"> <a href=/Admin/getRecipe/' + item.Id + '>Read</a> </pre>            '
+                       + ' <pre style="font-family:Arial"></pre></td></tr> ');
+
+                });
+
+            });
+
+
+
+        });
+
+
+
+    });
+
+
+</script>
+                  </table>
+              
+              <div id="Thai"><a href="/Admin/GetMenu/4"><h2><span>Thai Cuisine</span></h2></a></div>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="button" id="thai1" value="search"  style="color:orangered ; font-weight: bold; font-size: large ; height:30px ; border-style:groove; border-width:thin; border-color:black; border-radius:40px" />
+           
+              <br/>
+              <br/>
+              <table id="t4">
+
+@Scripts.Render("~/bundles/jquery")
+
+<script>
+
+    $(document).ready(function () {
+        $('#thai1').click(function () {
+            $.getJSON("/Admin/searchShow?sender=" + "thai", function (data) {
+
+                $('#t4').empty();
+
+
+                $.each(data, function (i, item) {
+
+                    $('#t4').append('<tr><td><pre style="font-family:Arial">' + item.Name + '</pre></td><td><pre style="font-family:Arial" >                                '
+                    + '</pre></td><td><pre style="font-family:Arial"> <a href=/Admin/getRecipe/' + item.Id + '>Read</a> </pre>            '
+                       + ' <pre style="font-family:Arial"></pre></td></tr> ');
+
+                });
+
+            });
+
+
+
+        });
+
+
+
+    });
+
+
+</script>
+                  </table>
+              
+               <div id="Italian"><a href="/Admin/GetMenu/5"><h2><span>Italian Cuisine</span></h2></a></div>
+             &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="button" id="italian1" value="search"  style="color:orangered ; font-weight: bold; font-size: large ; height:30px ; border-style:groove; border-width:thin; border-color:black; border-radius:40px" />
+
+              <br/>
+              <br/>
+              <table id="t5">
+
+@Scripts.Render("~/bundles/jquery")
+
+<script>
+
+    $(document).ready(function () {
+        $('#italian1').click(function () {
+            $.getJSON("/Admin/searchShow?sender=" + "italian", function (data) {
+
+                $('#t5').empty();
+
+
+                $.each(data, function (i, item) {
+
+                    $('#t5').append('<tr><td><pre style="font-family:Arial">' + item.Name + '</pre></td><td><pre style="font-family:Arial" >                                '
+                    + '</pre></td><td><pre style="font-family:Arial"> <a href=/Admin/getRecipe/' + item.Id + '>Read</a> </pre>            '
+                       + ' <pre style="font-family:Arial"></pre></td></tr> ');
+
+                });
+
+            });
+
+
+
+        });
+
+
+
+    });
+
+
+</script>
+                  </table>
+              
+            <div id="Bengali"><a href="/Admin/GetMenu/6"><h2><span> Bengali Cuisine</span></h2></a></div>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="button" id="bengali1" value="search"  style="color:orangered ; font-weight: bold; font-size: large ; height:30px ; border-style:groove; border-width:thin; border-color:black; border-radius:40px" />
+            
+              <br/>
+              <br/>
+              <table id="t6">
+
+@Scripts.Render("~/bundles/jquery")
+
+<script>
+
+    $(document).ready(function () {
+        $('#bengali1').click(function () {
+            $.getJSON("/Admin/searchShow?sender=" + "bengali", function (data) {
+
+                $('#t6').empty();
+
+
+                $.each(data, function (i, item) {
+
+                    $('#t6').append('<tr><td><pre style="font-family:Arial">' + item.Name + '</pre></td><td><pre style="font-family:Arial" >                                '
+                    + '</pre></td><td><pre style="font-family:Arial"> <a href=/Admin/getRecipe/' + item.Id + '>Read</a> </pre>            '
+                       + ' <pre style="font-family:Arial"></pre></td></tr> ');
+
+                });
+
+            });
+
+
+
+        });
+
+
+
+    });
+
+
+</script>
+                  </table>
+              
+              <div id="Singaporian"><a href="/Admin/GetMenu/7"><h2><span>Singaporian Cuisine</span></h2></a></div>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="button" id="singaporian1" value="search"  style="color:orangered ; font-weight: bold; font-size: large ; height:30px ; border-style:groove; border-width:thin; border-color:black; border-radius:40px" />
+            
+              <br/>
+              <br/>
+              <table id="t7">
+
+@Scripts.Render("~/bundles/jquery")
+
+<script>
+
+    $(document).ready(function () {
+        $('#singaporian1').click(function () {
+            $.getJSON("/Admin/searchShow?sender=" + "singaporian", function (data) {
+
+                $('#t7').empty();
+
+
+                $.each(data, function (i, item) {
+
+                    $('#t7').append('<tr><td><pre style="font-family:Arial">' + item.Name + '</pre></td><td><pre style="font-family:Arial" >                                '
+                    + '</pre></td><td><pre style="font-family:Arial"> <a href=/Admin/getRecipe/' + item.Id + '>Read</a> </pre>            '
+                       + ' <pre style="font-family:Arial"></pre></td></tr> ');
+
+                });
+
+            });
+
+
+
+        });
+
+
+
+    });
+
+
+</script>
+                  </table>
+              
+              <div id="Drinks"><a href="/Admin/GetMenu/8"><h2><span>Drinks</span></h2></a></div>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="button" id="drinks1" value="search"  style="color:orangered ; font-weight: bold; font-size: large ; height:30px ; border-style:groove; border-width:thin; border-color:black; border-radius:40px" />
+
+              <br/>
+              <br/>
+              <table id="t8">
+
+@Scripts.Render("~/bundles/jquery")
+
+<script>
+
+    $(document).ready(function () {
+        $('#drinks1').click(function () {
+            $.getJSON("/Admin/searchShow?sender=" + "drinks", function (data) {
+
+                $('#t8').empty();
+
+
+                $.each(data, function (i, item) {
+
+                    $('#t8').append('<tr><td><pre style="font-family:Arial">' + item.Name + '</pre></td><td><pre style="font-family:Arial" >                                '
+                    + '</pre></td><td><pre style="font-family:Arial"> <a href=/Admin/getRecipe/' + item.Id + '>Read</a> </pre>            '
+                       + ' <pre style="font-family:Arial"></pre></td></tr> ');
+
+                });
+
+            });
+
+
+
+        });
+
+
+
+    });
+
+
+</script>
+                  </table>
+
+              </form>
+          </article>
+    </div>
+  </div>
+
+</section>
+
+<!--==============================footer=================================-->
+
+<script type="text/javascript">Cufon.now();</script>

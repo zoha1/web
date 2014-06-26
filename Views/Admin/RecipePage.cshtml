@@ -1,0 +1,49 @@
+﻿@model EAD_project_4.Models.Recipe
+@{
+    Layout = "~/Views/Shared/adminLayout.cshtml";
+}
+
+
+<!--==============================header=================================-->
+<header>
+  <div class="row-top">
+    <div class="main">
+      <div class="wrapper">
+        <h1><a href="/User/index">Cook Book</a></h1>
+        <nav>
+          <ul class="menu">
+            <li><a href="/Admin/adminStart">Home</a></li>
+            <li><a href="/Admin/add">Add Recipes</a></li>
+              <li><a href="/Admin/viewRec">View</a></li>
+             <li><a href="/Admin/search">Search </a></li>
+            <li><a href="/Admin/delete">Delete </a></li>
+            <li><a href="/Admin/update">Update</a></li>
+             <li><a href="/Admin/viewSuggestions">View Suggestions</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div class="row-bot">
+    <div class="row-bot-bg">
+      <div class="main">
+        <h2>Tasty Recipes <span>for any Occasion</span></h2>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<table><tr><td><h2>@Model.Name</h2></td><tr></table>
+     <br /><br /><br />
+
+     <table><tr><td ><img src= "@Model.Image" width="500" height="500" /></td>
+            </tr></table>
+     
+     <br /><br /><br />
+     <h3 >Ingredients</h3>
+         <table><tr><td>@Model.Ingredients</td><tr> </table>
+     
+     <br /><br /><br />
+     <h3 >Recipe</h3>
+        <table><tr><td>@Model.Recipe1</td><tr></table>

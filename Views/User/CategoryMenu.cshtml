@@ -1,0 +1,43 @@
+﻿@model List<EAD_project_4.Models.Recipe>
+@{
+    Layout = "~/Views/Shared/userView.cshtml";
+}
+
+
+<!--==============================header=================================-->
+<header>
+  <div class="row-top">
+    <div class="main">
+      <div class="wrapper">
+        <h1><a href="/User/index">Cook Book</a></h1>
+        <nav>
+          <ul class="menu">
+            <li><a href="/User/index">About</a></li>
+            <li><a href="/User/menu">Recipes</a></li>
+             <li><a href="/User/search">Search </a></li>
+            <li><a href="/User/faq">FAQ </a></li>
+            <li><a href="/User/contact">Suggest</a></li>
+            <li><a href="/Admin/login">Admin Login</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div class="row-bot">
+    <div class="row-bot-bg">
+      <div class="main">
+        <h2>Tasty Recipes <span>for any Occasion</span></h2>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+@foreach (var s in Model)
+    {
+    <table>
+        <tr>
+            <td><a href="/User/getRecipe/@s.Id">@s.Name</a></td>
+        </tr>
+     </table>
+    }

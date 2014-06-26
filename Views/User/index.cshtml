@@ -1,0 +1,76 @@
+﻿
+@{
+    Layout = "~/Views/Shared/userView.cshtml";
+}
+
+<!--==============================header=================================-->
+<header>
+  <div class="row-top">
+    <div class="main">
+      <div class="wrapper">
+        <h1><a href="/User/index">Cook Book</a></h1>
+        <nav>
+          <ul class="menu">
+            <li><a class="active" href="/User/index">About</a></li>
+            <li><a href="/User/menu">Recipes</a></li>
+             <li><a href="/User/search">Search </a></li>
+            <li><a href="/User/faq">FAQ </a></li>
+            <li><a href="/User/contact">Suggest</a></li>
+            <li><a href="/Admin/login">Admin Login</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div class="row-bot">
+    <div class="row-bot-bg">
+      <div class="main">
+        <h2>Tasty Recipes <span>for any Occasion</span></h2>
+        <div class="wrapper">
+          <div class="rightArea">
+
+            <img id="img2" src="~/Images/slider-img1.jpg"/>
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!--==============================content================================-->
+<section id="content">
+  <div class="main">
+    <div class="wrapper img-indent-bot">
+      <article class="col-1"> <a href="/User/Menu"><img class="img-border" src="~/Images/banner-1.jpg" alt=""></a> </article>
+      <article class="col-1"> <a href="/User/faq"><img class="img-border" src="~/Images/banner-2.jpg" alt=""></a> </article>
+      <article class="col-2"> <a href="/User/contact"><img class="img-border" src="~/Images/banner-3.jpg" alt=""></a> </article>
+    </div>
+    <div class="wrapper">
+      <article class="column-2">
+        <div class="maxheight indent-bot">
+          <h3 class="p1">About the Cook Book</h3>
+          <h6 class="p2">Cook Book is the ultimate answer to your cooking problems.</h6>
+          <p class="p2">You can learn different recipes for various categories and provide your family and friends with tasty and ofcourse healthy food.</p>
+          You can not only learn but can also participate by suggesting us new recipes and variations. We welcome your criticism and compliments. Feel free to contact <br/>
+            <a href="/User/index">About</a> , <a href="/User/menu">Menu</a> , <a href="/User/search">Search</a> , <a href="/User/faq">FAQ</a> , <a href="/User/contact">Suggest</a></div>
+        </article>
+     </div>
+  </div>
+</section>
+<!--==============================footer=================================-->
+
+<script type="text/javascript">Cufon.now();</script>
+<script type="text/javascript">
+$(window).load(function () {
+    $('.slider')._TMS({
+        duration: 1000,
+        easing: 'easeOutQuint',
+        preset: 'slideDown',
+        slideshow: 7000,
+        banners: false,
+        pauseOnHover: true,
+        pagination: true,
+        pagNums: false
+    });
+});
+</script>
